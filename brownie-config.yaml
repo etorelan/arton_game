@@ -1,0 +1,36 @@
+dependencies:
+  - smartcontractkit/chainlink-brownie-contracts@0.4.0 
+  - OpenZeppelin/openzeppelin-contracts@4.4.1
+compiler:
+  solc:
+    remappings:
+      - '@chainlink=smartcontractkit/chainlink-brownie-contracts@0.4.0'
+      - '@openzeppelin=OpenZeppelin/openzeppelin-contracts@4.4.1'
+dotenv: .env
+networks:
+  default: kovan
+  development:
+    keyhash: '0x2ed0feb3e7fd2022120aa84fab1945545a9f2ffc9076fd6156fa96eaff4c1311'
+    fee: 100000000000000000
+  kovan:
+    vrf_coordinator: '0xdD3782915140c8f3b190B5D67eAc6dc5760C46E9'
+    link_token: '0xa36085F69e2889c224210F603D836748e7dC0088'
+    keyhash: '0x6c3699283bda56ad74f6b855546325b68d482e983852a7a82979cc4807b641f4'
+    fee: 100000000000000000
+    verify: False
+  mainnet-fork:
+    vrf_coordinator: '0x271682DEB8C4E0901D1a1550aD2e64D568E69909'
+    link_token: '0x514910771af9ca656af840dff83e8264ecf986ca'
+    keyhash: '0x9fe0eebf5e446e3c998ec9bb19951541aee00bb90ea201ae456421a2ded86805'
+    fee: 100000000000000000
+    verify: False
+  bsc-test:
+    vrf_coordinator: '0xa555fC018435bef5A13C6c6870a9d4C11DEC329C'
+    link_token: '0x84b9B910527Ad5C03A9Ca831909E21e236EA7b06'
+    keyhash: '0xcaf3c3727e033261d383b315559476f48034c13b18f8cafed4d871abe5049186'
+    fee: 100000000000000000
+    verify: False
+
+wallets:
+  from_key: ${PRIVATE_KEY}
+  from_bs: ${PRIVATE_KEY_1}
