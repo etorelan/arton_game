@@ -268,13 +268,4 @@ contract ArtonPurchase is VRFConsumerBase, Ownable {
         ///@dev Transfers this contract's LINK balance to the owner
         payable(msg.sender).transfer(LINK.balanceOf(address(this)));
     }
-
-    receive() external payable {
-        ///@dev When eth is sent to the contract without a purpose
-        ///@dev it is returned to the sender, while ensuring that
-        ///@dev the contract doesn't lose eth in the process
-        payable(address(msg.sender)).transfer(msg.value - 0.001 ether);
-    }
-
-    
 }
