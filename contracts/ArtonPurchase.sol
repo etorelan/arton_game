@@ -1,5 +1,5 @@
 //SPDX-License-Identifier: MIT
-pragma solidity ^0.8.13;
+pragma solidity 0.8.13;
 
 /// @author etorelan
 /// @notice This contract enables the creation of randomly generated creatures named Artons
